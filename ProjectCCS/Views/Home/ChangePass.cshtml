@@ -1,0 +1,32 @@
+﻿@model ProjectCCS.ViewsModel.ChangePasswordVM
+@{
+    ViewBag.Title = "ChangePass";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="user container flex">
+    @Html.Partial("~/Views/Shared/_NavigationBar.cshtml")
+    <div class="content">
+        <!-- 75% -->
+        <h3>Đổi mật khẩu</h3>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationMessage("error")
+            @Html.ValidationMessageFor(m => m.Password)
+            <div class="inputBox">
+                @Html.LabelFor(m => m.Password)
+                @Html.EditorFor(m => m.Password)
+            </div>
+            @Html.ValidationMessageFor(m => m.NewPassword)
+            <div class="inputBox">
+                @Html.LabelFor(m => m.NewPassword)
+                @Html.EditorFor(m => m.NewPassword)
+            </div>
+            @Html.ValidationMessageFor(m => m.Repassword)
+            <div class="inputBox">
+                @Html.LabelFor(m => m.Repassword)
+                @Html.EditorFor(m => m.Repassword)
+            </div>
+            <button type="submit" name="ChangepassUpdate">Cập nhật</button>
+        }
+    </div>
+</section>

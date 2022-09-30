@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ProjectCCS.BundleConfig" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\BundleConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectCCS.FilterConfig" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\FilterConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectCCS.RouteConfig" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectCCS.MvcApplication" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectCCS.Controllers.HomeController" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACYCDAmAAQAEBAIEAAAAhkoAAhAIAgACAEEAIBAUASw=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectCCS.Models.Bill" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAEACQAAAAAAAAAAAAAAAAAQAABAAAgAAAAAAA=</HashCode>
+      <FileName>Models\Bill.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectCCS.Models.BillDetail" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAAAAQAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\BillDetail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectCCS.Models.Category" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAgQ=</HashCode>
+      <FileName>Models\Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectCCS.Models.ContextDB" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQCAAAAAAAAAAAAAABAAAEAAAEAAAAAAgEAAAAAQ=</HashCode>
+      <FileName>Models\ContextDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectCCS.Models.Product" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABQAACAAAAAAAAIAAAAAAAEAAEAAAAAAAgAAAACgA=</HashCode>
+      <FileName>Models\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectCCS.Models.ShoppingCart" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAACAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\ShoppingCart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectCCS.Models.sysdiagram" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAIAAAAAAAAAAAAAAAQAAAFAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\sysdiagram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectCCS.Models.User" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAACAAAAAAAAAABAQAAAAAAAACAAAAIAAAAAA=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectCCS.ViewsModel.BillManagerVM" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAQAAAAAAAAAAAQAAAAAQAADAAAAAAAAAAA=</HashCode>
+      <FileName>ViewsModel\BillManagerVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectCCS.ViewsModel.ChangePasswordVM" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAABAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>ViewsModel\ChangePasswordVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectCCS.ViewsModel.ShoppingCartVM" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAACAEAAEAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>ViewsModel\ShoppingCartVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectCCS.ViewsModel.ValidEmail" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewsModel\ValidEmail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectCCS.ViewsModel.ValidPhone" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewsModel\ValidPhone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
