@@ -204,6 +204,7 @@
     <Content Include="app\dist\css\style.css" />
     <Content Include="app\img\1061.png" />
     <Content Include="app\img\1066.jpg" />
+    <Content Include="app\img\backgroundgray.jpg" />
     <Content Include="app\img\crossword.png" />
     <Content Include="app\img\lanmart.jpg" />
     <Content Include="app\img\LogoCCM.png" />
