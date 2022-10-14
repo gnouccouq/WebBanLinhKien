@@ -22,16 +22,13 @@
 <body>
     <header class="flex jc-c ai-c">
         <nav class="container flex jc-sb ai-c">
-            <a href="/" class="logo"><img src="~/app/img/logoC.jpg" /></a>
+            <a href="/" class="logo"><img style="width: 150px; height:100px" src="~/app/img/LogoCCM.png" /></a>
             <a id="btnToggle" href="#" class="toggle hide-for-desktop">
                 <span></span>
                 <span></span>
                 <span></span>
             </a>
             <ul class="menu flex jc-sb ai-c hide-for-mobile">
-                <li class="acv"><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
-                <li><a href="@Url.Action("ListProduct","Home")">Sản phẩm</a></li>
-                <li><a href="@Url.Action("UserDashBoard","Home")">Tài khoản</a></li>
                 @using (Html.BeginForm("Find", "Home", FormMethod.Post))
                 {
                     <li class="searchBox">
@@ -39,6 +36,10 @@
                         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </li>
                 }
+                <li class="acv"><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                <li><a href="@Url.Action("ListProduct","Home")">Sản phẩm</a></li>
+                <li><a href="@Url.Action("UserDashBoard","Home")">Tài khoản</a></li>
+
 
             </ul>
             <div class="status hide-for-mobile">
