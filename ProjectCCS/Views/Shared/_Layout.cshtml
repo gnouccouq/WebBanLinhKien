@@ -1,7 +1,7 @@
 ﻿@using ProjectCCS.Models
 @{ 
     ContextDB con = new ContextDB();
-    var user = Request.Cookies["user"] == null ? "0" : Request.Cookies["user"].Value.ToString();
+    var user = Request.Cookies["user"] == null ? "0" : Request.Cookies["user"].Value.ToString(); 
     var value = con.ShoppingCarts.Where(p => p.Email.Equals(user)).ToList().Count;
 }
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="~/app/dist/css/owl.carousel.min.css">
     <link rel="stylesheet" href="~/app/dist/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="~/app/dist/css/style.css">
-    
+
 </head>
 <body>
     <header class="flex jc-c ai-c">
@@ -32,7 +32,7 @@
                 @using (Html.BeginForm("Find", "Home", FormMethod.Post))
                 {
                     <li class="searchBox">
-                        <input placeholder="Bạn đang tìm gì?" name="txtKeyWord" type="text">
+                        <input placeholder="Nhập từ khóa cần tìm" name="txtKeyWord" type="text">
                         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </li>
                 }
