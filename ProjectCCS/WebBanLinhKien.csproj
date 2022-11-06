@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ProjectCCS</RootNamespace>
     <AssemblyName>ProjectCCS</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -181,14 +181,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Bill.cs" />
-    <Compile Include="Models\BillDetail.cs" />
-    <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\ContextDB.cs" />
-    <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\ShoppingCart.cs" />
-    <Compile Include="Models\sysdiagram.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="fonts\Models\Bill.cs" />
+    <Compile Include="fonts\Models\BillDetail.cs" />
+    <Compile Include="fonts\Models\Category.cs" />
+    <Compile Include="fonts\Models\ContextDB.cs" />
+    <Compile Include="fonts\Models\Product.cs" />
+    <Compile Include="fonts\Models\ShoppingCart.cs" />
+    <Compile Include="fonts\Models\sysdiagram.cs" />
+    <Compile Include="fonts\Models\User.cs" />
     <Compile Include="Momo\MoMoSecurity.cs" />
     <Compile Include="Momo\PaymentRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
