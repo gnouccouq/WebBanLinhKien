@@ -20,7 +20,7 @@ ul, li {
 }
 
 body {
-    background: url('../../img/backgroundgray.jpg');
+    background: #eeecec;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -603,7 +603,7 @@ footer {
     -ms-flex-direction: column;
     flex-direction: column;
     color: #000;
-    background: #ebecf1;
+    background: rgba(255, 255, 255, 0.8);
     padding-bottom: 2rem;
 }
 
@@ -1992,7 +1992,6 @@ element.style {
 
 a {
     color: rgb(13, 110, 253);
-    text-decoration: underline;
 }
 
 @media (max-width: 1440px)
