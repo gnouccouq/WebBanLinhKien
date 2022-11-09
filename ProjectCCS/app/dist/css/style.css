@@ -117,6 +117,10 @@ body {
   border-radius: 20px;
 }
 
+.btn-detail-text {
+
+}
+
 .title {
   font-size: 2rem;
   font-weight: 800;
@@ -1086,6 +1090,7 @@ footer .footer__cp {
 }
 
 .detail-product {
+    margin-top: 25px;
   position: relative;
   min-height: 60vh;
   width: 100%;
@@ -1527,9 +1532,19 @@ footer .footer__cp {
   display: block;
   text-align: center;
   padding: 1rem 2rem;
-  font-size: 2.25rem;
-  background: url("../../img/crossword.png") repeat #5a88ca;
+  font-size: 1.5rem;
+  background: #5a88ca;
   color: #fff;
+}
+
+.giohang .checkout .footer__checkout .thanhToanMomo {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    background: #d82d8b;
+    color: #fff;
 }
 
 .history {

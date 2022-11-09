@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <div class="item-product__details">
-                        <a href="/">@product.name</a>
+                        <a href="@Url.Action("detailProduct","Home", new { id = product.id })" class="detail btn-detail-text">@product.name</a>
                         <span>@String.Format(CultureInfo.CurrentCulture, "{0:C0}",product.price)</span>
                     </div>
                 </div>
