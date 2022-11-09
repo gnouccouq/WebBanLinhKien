@@ -85,17 +85,17 @@ body {
 }
 
 .button {
-  display: inline-block;
-  margin-top: 10px;
-  font-size: 1.5rem;
-  padding: 1rem 1.5rem;
-  outline: none;
-  font-weight: 600;
-  border: 3px solid #5a88ca;
-  border-radius: 40px;
-  color: #fff;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+    outline: none;
+    font-weight: 600;
+    border: 3px solid #5a88ca;
+    border-radius: 40px;
+    color: #5a88ca;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
 }
 
 .button:hover {
@@ -429,7 +429,7 @@ header .sub-menu .status a {
 .banner__text {
   max-width: 31.25rem;
   text-align: center;
-  color: #fff;
+  color: #222;
 }
 
 .banner__text p {
@@ -1914,5 +1914,78 @@ textarea {
 .valid{
     border: 2px solid green !important;
     outline-width: 0 !important;
+}
+
+
+
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+   box-sizing: border-box;
+}
+
+element.style {
+}
+
+.css-13dr3ir {
+    display: block;
+    z-index: 1030;
+    position: fixed;
+    bottom: 10rem;
+    right: 3rem;
+    cursor: pointer;
+    animation: 0.3s ease 0s 1 normal none running fadeIn;
+}
+
+element.style {
+}
+
+.css-1vv2dga {
+    z-index: 1030;
+    position: fixed;
+    right: 2.5rem;
+    bottom: 5.6rem;
+    cursor: pointer;
+}
+
+.css-1vv2dga {
+    z-index: 1030;
+    position: fixed;
+    right: 2.5rem;
+    bottom: 5.6rem;
+    cursor: pointer;
+}
+
+a {
+    color: rgb(13, 110, 253);
+    text-decoration: underline;
+}
+
+@media (max-width: 1440px)
+.css-1vv2dga .fb-chat {
+    display: block;
+}
+
+img, svg {
+    vertical-align: middle;
 }
 /*# sourceMappingURL=style.css.map */

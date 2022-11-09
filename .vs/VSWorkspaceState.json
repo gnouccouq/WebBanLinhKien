@@ -2,7 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\ProjectCCS",
-    "\\ProjectCCS\\Controllers"
+    "\\ProjectCCS\\app",
+    "\\ProjectCCS\\app\\dist",
+    "\\ProjectCCS\\app\\dist\\css"
   ],
   "SelectedNode": "\\WebBanLinhKien.sln",
   "PreviewInSolutionExplorer": false
