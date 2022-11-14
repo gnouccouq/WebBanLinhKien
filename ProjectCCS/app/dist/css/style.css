@@ -411,7 +411,7 @@ header .sub-menu .status a {
 
 
 .acv a {
-  color:#000000;
+    color: #1a73e8;
 }
 
 .banner {
@@ -461,7 +461,7 @@ header .sub-menu .status a {
 .banner__img {
   position: relative;
   border-radius: 30px;
-  background-image: url("../../img/1066.jpg");
+  background-image: url("../../img/banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
