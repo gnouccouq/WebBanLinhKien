@@ -219,6 +219,9 @@
     <Content Include="app\img\logoC.jpg" />
     <Content Include="app\img\macbookpro.jpg" />
     <Content Include="app\img\macbookpro13.jfif" />
+    <Content Include="app\img\slider1.jpg" />
+    <Content Include="app\img\slider2.jpg" />
+    <Content Include="app\img\slider3.jpg" />
     <Content Include="app\img\tannoi.jpg" />
     <Content Include="app\js\app.js" />
     <Content Include="app\js\owl.carousel.min.js" />
