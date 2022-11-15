@@ -283,6 +283,9 @@
     <Content Include="Views\Home\ChangePass.cshtml" />
     <Content Include="Views\Home\BillManager.cshtml" />
     <Content Include="Views\Home\UserManager.cshtml" />
+    <Content Include="Views\Home\BuildPC.cshtml" />
+    <Content Include="Views\Home\PaymentSuccess.cshtml" />
+    <Content Include="Views\Home\PaymentFail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\img\sanpham\" />

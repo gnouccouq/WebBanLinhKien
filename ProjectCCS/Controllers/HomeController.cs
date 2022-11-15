@@ -519,9 +519,9 @@ namespace ProjectCCS.Controllers
             string partnerCode = "MOMOKO6R20220526";
             string accessKey = "UwBfinvR6t8nPn5H";
             string serectkey = "2NcLVlpBPVt1m0cqanWFqDmUEha6XCgC";
-            string orderInfo = "Cường Nguyễn";
-            string returnUrl = "https://localhost:44342/Home/HistoryCart";
-            string notifyurl = "http://ba1adf48beba.ngrok.io/Home/HistoryCart"; //lưu ý: notifyurl không được sử dụng localhost, có thể sử dụng ngrok để public localhost trong quá trình test
+            string orderInfo = "Thanh toán dịch vụ CCM Technology";
+            string returnUrl = "https://localhost:44342/Home/PaymentSuccess";
+            string notifyurl = "http://ba1adf48beba.ngrok.io/Home/PaymentFail"; //lưu ý: notifyurl không được sử dụng localhost, có thể sử dụng ngrok để public localhost trong quá trình test
 
             Bill bill = new Bill();
             bill.Email = user;
@@ -595,6 +595,24 @@ namespace ProjectCCS.Controllers
             JObject jmessage = JObject.Parse(responseFromMomo);
 
             return Redirect(jmessage.GetValue("payUrl").ToString());
+        }
+
+        public ActionResult BuildPC()
+        {
+            
+            return View();
+        }
+
+        public ActionResult PaymentSuccess()
+        {
+
+            return View();
+        }
+
+        public ActionResult PaymentFail()
+        {
+
+            return View();
         }
     }
 }

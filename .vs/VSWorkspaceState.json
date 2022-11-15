@@ -4,7 +4,9 @@
     "\\ProjectCCS",
     "\\ProjectCCS\\app",
     "\\ProjectCCS\\app\\dist",
-    "\\ProjectCCS\\app\\dist\\css"
+    "\\ProjectCCS\\app\\dist\\css",
+    "\\ProjectCCS\\Views",
+    "\\ProjectCCS\\Views\\Home"
   ],
   "SelectedNode": "\\ProjectCCS\\app\\dist\\css\\style.css",
   "PreviewInSolutionExplorer": false
