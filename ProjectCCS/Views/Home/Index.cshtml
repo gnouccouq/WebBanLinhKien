@@ -1,7 +1,10 @@
-﻿@model PagedList.IPagedList<ProjectCCS.Models.Product>
+﻿@using System.Globalization
+
+@model PagedList.IPagedList<ProjectCCS.Models.Product>
 @using PagedList.Mvc;
 @{
     ViewBag.Title = "Trang Chủ";
+    var cat = ViewBag.categories as IEnumerable<ProjectCCS.Models.Category>;
 }
 
 <div class="slideshow-container">
@@ -74,6 +77,28 @@
     </div>
 </section>
 @Html.Partial("~/Views/Shared/_HotProduct.cshtml")
+
+<section class="products container mt-5">
+    <h1 class="main_title">SẢN PHẨM BÁN CHẠY <i class="fa fa-fire" style="color: red;"></i></h1>
+    <div class="services__items flex jc-sa ai-c mt-3">
+        <!-- Contains products 75% -->
+        <div class="owl-carousel owl-theme mt-3">
+            @foreach (var product in (IEnumerable<ProjectCCS.Models.Product>)Model)
+            {
+                <div class="item-product">
+                    <div class="item__content">
+                        <img src="@product.image" alt="">
+                        
+                    </div>
+                    <div class="item-product__details">
+                        <a href="@Url.Action("detailProduct","Home", new { id = product.id })" class="detail btn-detail-text">@product.name</a>
+                        <span>@String.Format(CultureInfo.CurrentCulture, "{0:C0}", product.price)</span>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
 <div class=" clearfix"></div>
 <script>
     let slideIndex = 0;
