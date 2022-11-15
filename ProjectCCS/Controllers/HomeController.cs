@@ -373,7 +373,7 @@ namespace ProjectCCS.Controllers
                 }
                 else
                 {
-                    ViewBag.Message = "Wrong password or username";
+                    ViewBag.Message = "Tài khoản hoặc mật khẩu của bạn không đúng!";
                     return View();
                 }
             }
@@ -395,7 +395,7 @@ namespace ProjectCCS.Controllers
             }
             if (context.Users.Where(p => p.Email.Equals(user.Email)).FirstOrDefault() != null)
             {
-                ModelState.AddModelError("EmailUsed", "Email have been used!");
+                ModelState.AddModelError("EmailUsed", "Email này đã được sử dụng!");
                 return View();
             }
             user.Password = GetMD5(user.Password);
