@@ -5,9 +5,11 @@
     "\\ProjectCCS\\app",
     "\\ProjectCCS\\app\\dist",
     "\\ProjectCCS\\app\\dist\\css",
+    "\\ProjectCCS\\Controllers",
     "\\ProjectCCS\\Views",
-    "\\ProjectCCS\\Views\\Home"
+    "\\ProjectCCS\\Views\\Home",
+    "\\ProjectCCS\\Views\\Shared"
   ],
-  "SelectedNode": "\\ProjectCCS\\app\\dist\\css\\style.css",
+  "SelectedNode": "\\ProjectCCS\\Views\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }

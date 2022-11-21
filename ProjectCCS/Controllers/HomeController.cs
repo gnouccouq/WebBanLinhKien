@@ -614,5 +614,11 @@ namespace ProjectCCS.Controllers
 
             return View();
         }
+
+        public ActionResult NewFeeds()
+        {
+
+            return View();
+        }
     }
 }

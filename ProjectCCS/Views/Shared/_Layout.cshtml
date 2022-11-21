@@ -37,10 +37,9 @@
                     </li>
                 }
                 <li class="acv"><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
-                <li><a href="@Url.Action("ListProduct","Home")">Danh mục sản phẩm</a></li>
-                <li><a href="@Url.Action("UserDashBoard","Home")">Tài khoản của bạn</a></li>
-
-
+                <li><a href="@Url.Action("ListProduct","Home")">Sản phẩm</a></li>
+                <li><a href="@Url.Action("NewFeeds","Home")">Bảng tin</a></li>
+                <li><a href="@Url.Action("UserDashBoard","Home")">Tài khoản</a></li>
             </ul>
             <div class="status hide-for-mobile">
                 @if (Request.Cookies["user"] != null)
@@ -59,8 +58,9 @@
                 <ul class="menu flex jc-sb ai-c">
                     <li class="acv"><a href="#">Trang chủ</a></li>
                     <li><a href="@Url.Action("ListProduct","Home")">Sản phẩm</a></li>
+                    <li><a href="@Url.Action("NewFeeds","Home")">Bảng tin</a></li>
                     <li><a href="@Url.Action("UserDashBoard","Home")">Tài khoản</a></li>
-                    <li class="searchBox"><input placeholder="Bạn đang tìm gì?" name="txtKeyWord" type="text"><button><i class="fa fa-search" aria-hidden="true"></i></button></li>
+                    <li class="searchBox"><input placeholder="Nhập từ khóa cần tìm" name="txtKeyWord" type="text"><button><i class="fa fa-search" aria-hidden="true"></i></button></li>
                 </ul>
                 <div class="status">
                     @if (Request.Cookies["user"] != null)
@@ -76,6 +76,10 @@
             </div>
         </nav>
     </header>
+
+    <a href="https://zalo.me/3894196696036261863" target="_blank" rel="noopener" class="zalo-chat">
+        <img src="https://cdn2.cellphones.com.vn/x/media/icons/icon-zalo.png" alt="Zalo Button">
+    </a>
 
     <a href="https://m.me/102452459355964" target="_blank" rel="noreferrer" data-content-region-name="quickAction" data-track-content="true" data-content-name="fbMessengerIcon" class="css-1vv2dga">
         <img class="fb-chat-full" src="https://shopfront-cdn.tekoapis.com/static/3ad4c9a97ab98ff3.png" alt="fb-chat">

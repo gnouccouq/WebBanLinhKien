@@ -286,6 +286,7 @@
     <Content Include="Views\Home\BuildPC.cshtml" />
     <Content Include="Views\Home\PaymentSuccess.cshtml" />
     <Content Include="Views\Home\PaymentFail.cshtml" />
+    <Content Include="Views\Home\NewFeeds.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\img\sanpham\" />
