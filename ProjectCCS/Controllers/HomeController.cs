@@ -16,6 +16,7 @@ using System.Web.UI;
 using System.Web.UI.MobileControls;
 using ProjectCCS.Momo;
 using Newtonsoft.Json.Linq;
+using System.Web.UI.WebControls;
 
 namespace ProjectCCS.Controllers
 {
@@ -619,6 +620,61 @@ namespace ProjectCCS.Controllers
         {
 
             return View();
+        }
+
+        public ActionResult ExportToExcel()
+        {
+            var gv = new GridView();
+            gv.DataSource = context.BillDetails
+                .Where(p => p.idBill != null)
+                .Select(r => new {
+                    idBill = r.idBill,
+                    Name = r.Bill.User.Name,
+                    Email = r.Bill.Email,
+                    Total = r.Bill.Total,
+                    Date = r.Bill.Date,
+                })
+                .OrderBy(p => p.idBill)
+                .ToList();
+            gv.DataBind();
+            Response.Clear();
+            Response.Buffer = true;
+            //Response.AddHeader("content-disposition",
+            // "attachment;filename=GridViewExport.xls");
+            Response.Charset = "utf-8";
+            Response.ContentType = "application/ms-excel";
+            Response.AddHeader("content-disposition", "attachment; filename=QL HOADON.xls");
+            //Mã hóa chữa sang UTF8
+            Response.ContentEncoding = System.Text.Encoding.UTF8;
+            Response.BinaryWrite(System.Text.Encoding.UTF8.GetPreamble());
+
+            StringWriter sw = new StringWriter();
+            HtmlTextWriter hw = new HtmlTextWriter(sw);
+
+            for (int i = 0; i < gv.Rows.Count; i++)
+            {
+                //Apply text style to each Row
+                gv.Rows[i].Attributes.Add("class", "textmode");
+            }
+            //Add màu nền cho header của file excel
+            gv.HeaderRow.BackColor = System.Drawing.Color.DarkBlue;
+            //Màu chữ cho header của file excel
+            gv.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            gv.HeaderRow.Cells[0].Text = "Số Hóa Đơn";
+            gv.HeaderRow.Cells[1].Text = "Tên Khách Hàng";
+            gv.HeaderRow.Cells[2].Text = "Email";
+            gv.HeaderRow.Cells[3].Text = "Tổng Tiền";
+            gv.HeaderRow.Cells[4].Text = "Thời gian mua";
+
+            gv.RenderControl(hw);
+
+            Response.Output.Write(sw.ToString());
+            Response.Flush();
+            Response.End();
+            var model = context.BillDetails
+                .OrderBy(p => p.idBill)
+                .ToList();
+            return View("View", model);
         }
     }
 }

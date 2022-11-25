@@ -1,6 +1,7 @@
 ﻿@using System.Globalization
+@model IEnumerable<ProjectCCS.Models.Product>
 
-@model PagedList.IPagedList<ProjectCCS.Models.Product>
+
 @using PagedList.Mvc;
 @{
     ViewBag.Title = "Trang Chủ";
@@ -88,7 +89,31 @@
                 <div class="item-product">
                     <div class="item__content">
                         <img src="@product.image" alt="">
-                        
+
+                    </div>
+                    <div class="item-product__details">
+                        <a href="@Url.Action("detailProduct","Home", new { id = product.id })" class="detail btn-detail-text">@product.name</a>
+                        <span>@String.Format(CultureInfo.CurrentCulture, "{0:C0}", product.price)</span>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="list_products flex container">
+    <div class="right-side">
+        <!-- Contains products 75% -->
+        <div class="products__container">
+            @foreach (var product in (IEnumerable<ProjectCCS.Models.Product>)Model)
+            {
+                <div class="item-product">
+                    <div class="item__content">
+                        <img src="@product.image" alt="">
+                        <div class="item__content__hover">
+                            <a href="@Url.Action("AddToCart", "Home", new { id = product.id,@strURL=Request.Url.ToString() })" class="cart btn-detail"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Thêm vào giỏ</a>
+                            <a href="@Url.Action("detailProduct","Home", new { id = product.id })" class="detail btn-detail"><i class="fa fa-eye"></i>Xem chi tiết</a>
+                        </div>
                     </div>
                     <div class="item-product__details">
                         <a href="@Url.Action("detailProduct","Home", new { id = product.id })" class="detail btn-detail-text">@product.name</a>
