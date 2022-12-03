@@ -194,6 +194,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewsModel\BillManagerVM.cs" />
     <Compile Include="ViewsModel\ChangePasswordVM.cs" />
+    <Compile Include="Model\ResetPasswordModel.cs" />
     <Compile Include="ViewsModel\ShoppingCartVM.cs" />
     <Compile Include="ViewsModel\ValidEmail.cs" />
     <Compile Include="ViewsModel\ValidPhone.cs" />
@@ -288,6 +289,9 @@
     <Content Include="Views\Home\PaymentFail.cshtml" />
     <Content Include="Views\Home\NewFeeds.cshtml" />
     <Content Include="Views\Home\NewFeeds1.cshtml" />
+    <Content Include="Views\Home\ForgotPassword.cshtml" />
+    <Content Include="Views\Home\XacNhanEmail.cshtml" />
+    <Content Include="Views\Home\ResetPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\img\sanpham\" />

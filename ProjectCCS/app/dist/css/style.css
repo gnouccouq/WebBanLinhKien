@@ -2402,8 +2402,74 @@ a {
 }
 
 
+/*BUILDPC*/
+.build-pc *, .custom-pc * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
 
+.build-pc .build-pc_content {
+    margin-top: 50px;
+}
 
+.build-pc .build-pc_content .list-drive {
+    list-style-type: none;
+}
 
+.build-pc .build-pc_content .list-drive .item-drive:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
 
+.build-pc .build-pc_content .list-drive .item-drive {
+    padding: 0 8px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.build-pc .build-pc_content .list-drive .item-drive span.d-name {
+    float: left;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    width: 240px;
+    padding-left: 20px;
+}
+
+.build-pc .build-pc_content .list-drive .item-drive .drive-checked {
+    border-left: 1px solid #e1e1e1;
+    margin-left: 240px;
+}
+
+.build-pc .build-pc_content .list-drive .item-drive span.span-last {
+    margin-bottom: 8px;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #0676da;
+    border-radius: 3px;
+    line-height: 34px;
+    display: inline-block;
+    padding: 0 8px;
+    margin-left: 10px;
+    cursor: pointer;
+    opacity: 1;
+}
+
+element.style {
+    margin-top: 0;
+    float: left;
+    border: none;
+    display: none;
+}
+
+.build-pc .build-pc_content .list-btn-action {
+    list-style-type: none;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #959595;
+    display: flex;
+    justify-content: flex-end;
+}
     /*# sourceMappingURL=style.css.map */

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ProjectCCS.ViewsModel;
+using ProjectCCS.Model;
 using System.ComponentModel.DataAnnotations;
 using System.Net.Mail;
 using System.Globalization;
@@ -17,6 +18,8 @@ using System.Web.UI.MobileControls;
 using ProjectCCS.Momo;
 using Newtonsoft.Json.Linq;
 using System.Web.UI.WebControls;
+using System.Net;
+using System.Web.Helpers;
 
 namespace ProjectCCS.Controllers
 {
@@ -509,7 +512,7 @@ namespace ProjectCCS.Controllers
         {
             var user = getUser();
             var list = context.ShoppingCarts.Where(p => p.Email.Equals(user)).ToList();
-            if (list.Count == 0)
+            if (list.Count == 0) 
             {
                 return RedirectToAction("ListProduct");
             }
@@ -675,6 +678,147 @@ namespace ProjectCCS.Controllers
                 .OrderBy(p => p.idBill)
                 .ToList();
             return View("View", model);
+        }
+
+
+        public ActionResult XacNhanEmail()
+        {
+            return View();
+        }
+
+
+        [HttpGet]
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ForgotPassword(string Email)
+        {
+            string message = "";
+            bool status = false;
+
+            using (ContextDB dc = new ContextDB())
+            {
+                var account = dc.Users.Where(a => a.Email == Email).FirstOrDefault();
+                if (account != null)
+                {
+                    //gui mail de reset lai password
+                    string resetCode = Guid.NewGuid().ToString();
+                    SendVerificationLinkEmail(account.Email, resetCode, "ResetPassword");
+                    account.ResetPasswordCode = resetCode;
+                    dc.Configuration.ValidateOnSaveEnabled = false;
+                    dc.SaveChanges();
+                    message = "Liên kết đặt lại mật khẩu đã được gửi đến email của bạn.";
+                    return RedirectToAction("XacNhanEmail", "Home");
+                }
+                else
+                {
+                    message = "Không tìm thấy tài khoản";
+                }
+            }
+            ViewBag.Message = message;
+            return View();
+        }
+
+        public ActionResult ResetPassword(string id)
+        {
+
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                return HttpNotFound();
+            }
+
+            using (ContextDB dc = new ContextDB())
+            {
+                var user = dc.Users.Where(a => a.ResetPasswordCode == id).FirstOrDefault();
+                if (user != null)
+                {
+                    ResetPasswordModel model = new ResetPasswordModel();
+                    model.ResetCode = id;
+                    return View(model);
+                }
+                else
+                {
+                    return HttpNotFound();
+                }
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ResetPassword(ResetPasswordModel model)
+        {
+            var message = "";
+            if (ModelState.IsValid)
+            {
+                using (ContextDB dc = new ContextDB())
+                {
+                    var user = dc.Users.Where(a => a.ResetPasswordCode == model.ResetCode).FirstOrDefault();
+                    if (user != null)
+                    {
+                        
+                        user.Password = GetMD5(model.NewPassword);
+                        user.ResetPasswordCode = "";
+                        dc.Configuration.ValidateOnSaveEnabled = false;
+                        dc.SaveChanges();
+                        message = "Đã cập nhật mật khẩu";
+                        return RedirectToAction("Login", "Home");
+                    }
+                }
+            }
+            else
+            {
+                message = "Có lỗi xảy ra";
+            }
+            ViewBag.Message = message;
+            return View(model);
+        }
+
+        [NonAction]
+        private bool IsEmailExist(string email)
+        {
+            using (ContextDB dc = new ContextDB())
+            {
+                var v = dc.Users.Where(a => a.Email == email).FirstOrDefault();
+                return v != null;
+            }
+        }
+        public void SendVerificationLinkEmail(string email, string activationCode, string emailFor = "ResetPassword")
+        {
+            var verifyUrl = "/Home/" + emailFor + "/" + activationCode;
+            var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, verifyUrl);
+
+            var fromEmail = new MailAddress("congdo2603@gmail.com", "Cửa hàng linh kiện điện tử");
+            var toEmail = new MailAddress(email);
+            var fromEmailPassword = "zupiavgwdamnpntj";
+            string subject = "";
+            string body = "";
+            if (emailFor == "ResetPassword")
+            {
+                subject = "Reset Password";
+                body = "Xin chào.Chúng tôi đã nhận được yêu cầu đặt lại mật khẩu tài khoản của bạn. Vui lòng nhấp vào liên kết dưới đây để đặt lại mật khẩu" +
+                    "<br/><br/><a href=" + link + ">Khôi Phục Mật Khẩu</a>";
+            }
+
+
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromEmail.Address, fromEmailPassword)
+            };
+
+            using (var message = new MailMessage(fromEmail, toEmail)
+            {
+                Subject = subject,
+                Body = body,
+                IsBodyHtml = true
+            })
+                smtp.Send(message);
         }
     }
 }
