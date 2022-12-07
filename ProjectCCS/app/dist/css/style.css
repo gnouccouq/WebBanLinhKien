@@ -38,7 +38,7 @@ body {
 }
 
 .container {
-  width: 1700px;
+  width: 1500px;
   margin: 0 auto;
   padding: 0 1.25rem;
 }
@@ -843,7 +843,7 @@ footer .footer__cp {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(5, 1fr);
   gap: 120px 0;
 }
 
@@ -2024,7 +2024,7 @@ img {
 
 /* Slideshow container */
 .slideshow-container {
-    max-width: 1700px;
+    max-width: 1500px;
     position: relative;
     margin: auto;
 }

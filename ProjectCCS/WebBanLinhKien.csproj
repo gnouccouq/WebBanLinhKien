@@ -222,6 +222,22 @@
     <Content Include="app\img\logoC.jpg" />
     <Content Include="app\img\macbookpro.jpg" />
     <Content Include="app\img\macbookpro13.jfif" />
+    <Content Include="app\img\sanpham\card1660.png" />
+    <Content Include="app\img\sanpham\cases1.png" />
+    <Content Include="app\img\sanpham\corei712700.png" />
+    <Content Include="app\img\sanpham\fan120e.png" />
+    <Content Include="app\img\sanpham\fan8cm.png" />
+    <Content Include="app\img\sanpham\hddp102tb.png" />
+    <Content Include="app\img\sanpham\imac275k.png" />
+    <Content Include="app\img\sanpham\lcdlenovo.png" />
+    <Content Include="app\img\sanpham\lcdmsi.png" />
+    <Content Include="app\img\sanpham\mac2018.png" />
+    <Content Include="app\img\sanpham\mainh510m.png" />
+    <Content Include="app\img\sanpham\pc1.png" />
+    <Content Include="app\img\sanpham\pc2.png" />
+    <Content Include="app\img\sanpham\psup650b.png" />
+    <Content Include="app\img\sanpham\ram8gb3200.png" />
+    <Content Include="app\img\sanpham\taingheeh416.png" />
     <Content Include="app\img\slider1.jpg" />
     <Content Include="app\img\slider2.jpg" />
     <Content Include="app\img\slider3.jpg" />
@@ -296,7 +312,6 @@
     <Content Include="Views\Home\ImportExcel.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\img\sanpham\" />
     <Folder Include="App_Data\" />
     <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="ZaloPay\" />
