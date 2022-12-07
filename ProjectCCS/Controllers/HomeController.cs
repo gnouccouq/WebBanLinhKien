@@ -20,6 +20,10 @@ using Newtonsoft.Json.Linq;
 using System.Web.UI.WebControls;
 using System.Net;
 using System.Web.Helpers;
+using System.Configuration;
+using System.Data.OleDb;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace ProjectCCS.Controllers
 {
@@ -819,6 +823,92 @@ namespace ProjectCCS.Controllers
                 IsBodyHtml = true
             })
                 smtp.Send(message);
+        }
+
+        [HttpPost]
+        public ActionResult ImportSP(HttpPostedFileBase postedFile)
+        {
+            try
+            {
+                string filePath = string.Empty;
+                if (postedFile != null)
+                {
+                    string path = Server.MapPath("~/Uploads/");
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+
+                    filePath = path + Path.GetFileName(postedFile.FileName);
+                    string extension = Path.GetExtension(postedFile.FileName);
+                    postedFile.SaveAs(filePath);
+
+                    string conString = string.Empty;
+                    switch (extension)
+                    {
+                        case ".xls":
+                            conString = ConfigurationManager.ConnectionStrings["Excel03ConString"].ConnectionString;
+                            break;
+                        case ".xlsx":
+                            conString = ConfigurationManager.ConnectionStrings["Excel07ConString"].ConnectionString;
+                            break;
+                    }
+
+                    DataTable dtExcel = new DataTable();
+                    conString = string.Format(conString, filePath);
+                    using (OleDbConnection connExcel = new OleDbConnection(conString))
+                    {
+                        using (OleDbCommand cmdExcel = new OleDbCommand())
+                        {
+                            using (OleDbDataAdapter odaExcel = new OleDbDataAdapter())
+                            {
+                                cmdExcel.Connection = connExcel;
+                                connExcel.Open();
+                                DataTable dtExcelSchema;
+                                dtExcelSchema = connExcel.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+                                string sheetName = dtExcelSchema.Rows[0]["TABLE_NAME"].ToString();
+                                connExcel.Close();
+
+                                connExcel.Open();
+                                cmdExcel.CommandText = "SELECT *from [" + sheetName + "]";
+                                odaExcel.SelectCommand = cmdExcel;
+                                odaExcel.Fill(dtExcel);
+                                connExcel.Close();
+                            }
+                        }
+                    }
+                    conString = ConfigurationManager.ConnectionStrings["ContextDB"].ConnectionString;
+                    using (SqlConnection con = new SqlConnection(conString))
+                    {
+                        using (SqlBulkCopy sqlBulkCopy = new SqlBulkCopy(con))
+                        {
+                            sqlBulkCopy.DestinationTableName = "dbo.Product";
+
+                            sqlBulkCopy.ColumnMappings.Add("id", "id");
+                            sqlBulkCopy.ColumnMappings.Add("name", "name");
+                            sqlBulkCopy.ColumnMappings.Add("image", "image");
+                            sqlBulkCopy.ColumnMappings.Add("descriptions", "descriptions");
+                            sqlBulkCopy.ColumnMappings.Add("categoryId", "categoryId");
+                            sqlBulkCopy.ColumnMappings.Add("price", "price");
+
+                            con.Open();
+                            sqlBulkCopy.WriteToServer(dtExcel);
+                            con.Close();
+                        }
+                    }
+
+                }
+                return RedirectToAction("productManager");
+            }
+            catch
+            {
+                return RedirectToAction("productManager");
+            }
+        }
+
+        public ActionResult ImportExcel()
+        {
+            return View();
         }
     }
 }

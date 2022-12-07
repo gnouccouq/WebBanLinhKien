@@ -21,8 +21,9 @@
                         @Html.PasswordFor(m => m.Password, new { type = "password", placeholder = "Vui lòng nhập mật khẩu" })
                         @Html.ValidationMessageFor(m => m.Password)
                         <input class="button" type="submit" id="login" value="Đăng nhập">
-                        <a href="@Url.Action("Register", "Home")"><input class="button" type="button" value="Đăng ký" /></a>
-                        <a href="@Url.Action("ForgotPassword", "Home")"><input class="button" type="button" value="Quên mật khẩu" /></a>
+                        <a href="@Url.Action("Register", "Home")">Bạn chưa có tài khoản?</a>
+                        <tr>Hoặc</tr>
+                        <a href="@Url.Action("ForgotPassword", "Home")">Quên mật khẩu</a>
                     }
                 </div>
             </div>

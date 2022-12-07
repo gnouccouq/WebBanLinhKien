@@ -11,20 +11,20 @@ namespace ProjectCCS.ViewsModel
         [StringLength(50)]
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name ="Password")]
+        [Display(Name ="Mật khẩu cũ")]
         public string Password { get; set; }
 
         [StringLength(50)]
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "New Password")]
+        [Display(Name = "Mật khẩu mới")]
         public string NewPassword { get; set; }
 
         [StringLength(50)]
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Re-Password")]
-        [Compare(nameof(NewPassword),ErrorMessage ="Password doesn't match")]
+        [Display(Name = "Nhập lại mật khẩu mới")]
+        [Compare(nameof(NewPassword),ErrorMessage ="Mjat khẩu không khớp")]
         public string Repassword { get; set; }
     }
 }

@@ -8,11 +8,12 @@
     var cat = ViewBag.categories as IEnumerable<ProjectCCS.Models.Category>;
 }
 
+
 <div class="slideshow-container">
 
     <div class="mySlides fade">
         <div class="numbertext"></div>
-        <img src="~/app/img/slider1.jpg" style="width:100%">
+        <img src="~/app/img/banner4.png" style="width:100%">
     </div>
 
     <div class="mySlides fade">
@@ -24,15 +25,13 @@
         <div class="numbertext"></div>
         <img src="~/app/img/slider3.jpg" style="width:100%">
     </div>
-
 </div>
-<br>
-
 <div style="text-align:center">
     <span class="dot"></span>
     <span class="dot"></span>
     <span class="dot"></span>
 </div>
+<br>
 
 <section class="banner  flex jc-c ai-c container">
     <div class="banner__text">
@@ -79,27 +78,9 @@
 </section>
 @Html.Partial("~/Views/Shared/_HotProduct.cshtml")
 
-<section class="products container mt-5">
-    <h1 class="main_title">SẢN PHẨM BÁN CHẠY <i class="fa fa-fire" style="color: red;"></i></h1>
-    <div class="services__items flex jc-sa ai-c mt-3">
-        <!-- Contains products 75% -->
-        <div class="owl-carousel owl-theme mt-3">
-            @foreach (var product in (IEnumerable<ProjectCCS.Models.Product>)Model)
-            {
-                <div class="item-product">
-                    <div class="item__content">
-                        <img src="@product.image" alt="">
 
-                    </div>
-                    <div class="item-product__details">
-                        <a href="@Url.Action("detailProduct","Home", new { id = product.id })" class="detail btn-detail-text">@product.name</a>
-                        <span>@String.Format(CultureInfo.CurrentCulture, "{0:C0}", product.price)</span>
-                    </div>
-                </div>
-            }
-        </div>
-    </div>
-</section>
+
+<h1 class="main_title">SẢN PHẨM BÁN CHẠY <i class="fa fa-fire" style="color: red;"></i></h1>
 
 <section class="list_products flex container">
     <div class="right-side">

@@ -15,7 +15,7 @@ namespace ProjectCCS.ViewsModel
             var email = new EmailAddressAttribute();
             if (!email.IsValid(value))
             {
-                return new ValidationResult(FormatErrorMessage(ErrorMessage = "Email is not valid !"));
+                return new ValidationResult(FormatErrorMessage(ErrorMessage = "Email không hợp lệ!"));
             }
             return null;
          }

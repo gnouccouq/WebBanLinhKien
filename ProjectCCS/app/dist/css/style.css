@@ -38,7 +38,7 @@ body {
 }
 
 .container {
-  width: 1170px;
+  width: 1700px;
   margin: 0 auto;
   padding: 0 1.25rem;
 }
@@ -1034,6 +1034,7 @@ footer .footer__cp {
 
 .content .login-main .box__body form input {
   margin-top: 15px;
+  margin-bottom: 15px;
   display: block;
   padding: 12px 24px;
   width: 100%;
@@ -2023,7 +2024,7 @@ img {
 
 /* Slideshow container */
 .slideshow-container {
-    max-width: 1000px;
+    max-width: 1700px;
     position: relative;
     margin: auto;
 }

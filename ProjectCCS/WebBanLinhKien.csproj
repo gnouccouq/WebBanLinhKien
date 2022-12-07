@@ -208,6 +208,7 @@
     <Content Include="app\img\backgroundgray.jpg" />
     <Content Include="app\img\backgroundwhile.jpg" />
     <Content Include="app\img\banner.jpg" />
+    <Content Include="app\img\banner4.png" />
     <Content Include="app\img\crossword.png" />
     <Content Include="app\img\lanmart.jpg" />
     <Content Include="app\img\LogoCCM.png" />
@@ -292,6 +293,7 @@
     <Content Include="Views\Home\ForgotPassword.cshtml" />
     <Content Include="Views\Home\XacNhanEmail.cshtml" />
     <Content Include="Views\Home\ResetPassword.cshtml" />
+    <Content Include="Views\Home\ImportExcel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\img\sanpham\" />

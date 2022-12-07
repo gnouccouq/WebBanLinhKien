@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "ImportExcel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<section class="admin container flex">
+
+    @Html.Partial("~/Views/Shared/_NavigationBar.cshtml")
+
+    <div class="content">
+        <!-- 75% -->
+        <h3>Thêm sản phẩm</h3>
+        
+            <div>
+                @using (Html.BeginForm("ImportSP", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <input type="file" name="postedFile" class="button" />
+                    <input type="submit" value="Thêm" class="button" />
+                }
+            </div>
+       
+   </section>
+</html>
