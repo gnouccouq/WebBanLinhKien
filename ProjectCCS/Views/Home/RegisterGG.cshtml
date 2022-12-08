@@ -1,0 +1,39 @@
+﻿@using ProjectCCS.Models
+@model ProjectCCS.Models.User
+@{
+ViewBag.Title = "RegisterGG";
+Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="content">
+    <section class="login-main">
+        <div class="box">
+            <h2 class="box__title">Đăng ký tài khoản</h2>
+            <div class="box__body">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken();
+
+                    @Html.LabelFor(m => m.Name, new { @class = "register" })
+                    @Html.TextBoxFor(m => m.Name, "", new { placeholder = "Vui lòng nhập họ và tên" })
+                    @Html.ValidationMessageFor(m => m.Name)
+
+
+                    @Html.LabelFor(m => m.Address, new { @class = "register" })
+                    @Html.TextBoxFor(m => m.Address, "", new { placeholder = "Vui lòng nhập địa chỉ" })
+                    @Html.ValidationMessageFor(m => m.Address)
+
+
+                    @Html.LabelFor(m => m.Phone, new { @class = "register" })
+                    @Html.TextBoxFor(m => m.Phone, "", new { placeholder = "Vui lòng nhập số điện thoại" })
+                    @Html.ValidationMessageFor(m => m.Phone)
+
+
+
+                    <input class="button" id="register" type="submit" value="Đăng ký">
+                }
+            </div>
+        </div>
+    </section>
+</section>
+

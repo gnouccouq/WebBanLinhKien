@@ -24,6 +24,9 @@ using System.Configuration;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Data;
+using Newtonsoft.Json;
+using System.Threading.Tasks;
+using GoogleAuthentication.Services;
 
 namespace ProjectCCS.Controllers
 {
@@ -359,6 +362,10 @@ namespace ProjectCCS.Controllers
         [ActionName("Login")]
         public ActionResult Login_get()
         {
+            var clientId = "314107451077-3986rlpibpbvffboa0a9kqqtc837ad9a.apps.googleusercontent.com";
+            var url = "https://localhost:44342/Home/Register";
+            var response = GoogleAuth.GetAuthUrl(clientId, url);
+            ViewBag.response = response;
             return View();
         }
         [HttpPost]
@@ -387,6 +394,18 @@ namespace ProjectCCS.Controllers
                 }
             }
         }
+
+        public async Task<ActionResult> GoogleLoginCallBack(string code)
+        {
+            var clientId = "314107451077-3986rlpibpbvffboa0a9kqqtc837ad9a.apps.googleusercontent.com";
+            var url = "https://localhost:44342/Home/Register";
+            var clientsecret = "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";
+            var token = await GoogleAuth.GetAuthAccessToken(code, clientId, clientsecret, url);
+            var userProfile = await GoogleAuth.GetProfileResponseAsync(token.AccessToken.ToString());
+            var googleUser = JsonConvert.DeserializeObject<User>(userProfile);
+            return View();
+        }
+
         [HttpGet]
         [ActionName("Register")]
         public ActionResult Register_get()
@@ -609,6 +628,11 @@ namespace ProjectCCS.Controllers
         public ActionResult BuildPC()
         {
             
+            return View();
+        }
+        public ActionResult RegisterGG()
+        {
+
             return View();
         }
 

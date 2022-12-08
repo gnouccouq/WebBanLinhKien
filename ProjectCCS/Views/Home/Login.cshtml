@@ -20,18 +20,22 @@
                         @Html.LabelFor(m => m.Password)
                         @Html.PasswordFor(m => m.Password, new { type = "password", placeholder = "Vui lòng nhập mật khẩu" })
                         @Html.ValidationMessageFor(m => m.Password)
-                <div>
-                    @using (Html.BeginForm("FormSubmit", "Home", FormMethod.Post))
-                    {
-                        <div class="g-recaptcha" data-sitekey="6LdJdVwjAAAAANATzxgBzNbwm6XO6vQiL09TxnRG"></div>
-                        <input class="button" type="submit" id="login" value="Đăng nhập">
-                    }
-                </div>
-                        
+                        <div>
+                            @using (Html.BeginForm("FormSubmit", "Home", FormMethod.Post))
+                            {
+                                <div class="g-recaptcha" data-sitekey="6LdJdVwjAAAAANATzxgBzNbwm6XO6vQiL09TxnRG"></div>
+                                <input class="button" type="submit" id="login" value="Đăng nhập">
+                            }
+                        </div>
+
                         <a href="@Url.Action("Register", "Home")">Bạn chưa có tài khoản?</a>
                         <tr>Hoặc</tr>
                         <a href="@Url.Action("ForgotPassword", "Home")">Quên mật khẩu</a>
+                        <br />
+                        <a href="@ViewBag.response"><i class="fab fa-google"></i>Login Google</a>
                     }
+
+
                 </div>
             </div>
         </section>

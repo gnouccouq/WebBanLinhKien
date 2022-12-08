@@ -55,10 +55,16 @@
     <Reference Include="Firebase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FirebaseDatabase.net.4.0.6\lib\netstandard2.0\Firebase.dll</HintPath>
     </Reference>
+    <Reference Include="GoogleAuthentication, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GoogleAuthentication.1.0.0\lib\net46\GoogleAuthentication.dll</HintPath>
+    </Reference>
     <Reference Include="LiteDB, Version=4.1.4.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
       <HintPath>..\packages\LiteDB.4.1.4\lib\net40\LiteDB.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
       <Private>True</Private>
@@ -154,9 +160,6 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -229,6 +232,7 @@
     <Content Include="app\img\sanpham\fan8cm.png" />
     <Content Include="app\img\sanpham\hddp102tb.png" />
     <Content Include="app\img\sanpham\imac275k.png" />
+    <Content Include="app\img\sanpham\laptoplenovo.png" />
     <Content Include="app\img\sanpham\lcdlenovo.png" />
     <Content Include="app\img\sanpham\lcdmsi.png" />
     <Content Include="app\img\sanpham\mac2018.png" />
@@ -244,6 +248,7 @@
     <Content Include="app\img\tannoi.jpg" />
     <Content Include="app\js\app.js" />
     <Content Include="app\js\owl.carousel.min.js" />
+    <Content Include="Code2Night.jpeg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -311,6 +316,7 @@
     <Content Include="Views\Home\ResetPassword.cshtml" />
     <Content Include="Views\Home\ImportExcel.cshtml" />
     <Content Include="Views\Home\PaymentTM.cshtml" />
+    <Content Include="Views\Home\RegisterGG.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
