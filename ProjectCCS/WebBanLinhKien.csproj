@@ -310,6 +310,7 @@
     <Content Include="Views\Home\XacNhanEmail.cshtml" />
     <Content Include="Views\Home\ResetPassword.cshtml" />
     <Content Include="Views\Home\ImportExcel.cshtml" />
+    <Content Include="Views\Home\PaymentTM.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

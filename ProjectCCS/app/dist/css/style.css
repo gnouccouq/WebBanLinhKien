@@ -844,7 +844,7 @@ footer .footer__cp {
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(5, 1fr);
-  gap: 120px 0;
+  gap: 200px 0;
 }
 
 @media (max-width: 63.9375em) {

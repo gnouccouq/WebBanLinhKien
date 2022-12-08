@@ -60,16 +60,17 @@ namespace ProjectCCS.Controllers
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
             mail.From = new MailAddress("congdo2603@gmail.com");
             mail.To.Add(getUser());
-            mail.Subject = "Confirm you order";
-            mail.Body = "\nThis is automatic email, please don't reply it !";
-            mail.Body += "\nYour order ID: " + IdBill.ToString();
+            mail.Subject = "CCM Technology - Đơn hàng mới";
+            mail.Body = "\nĐơn hàng của bạn đã được xác nhận và sẽ được xử lý ngay.";
+            mail.Body = "\nCCM Technology cảm ơn bạn đã ủng hộ sản phẩm bên Shop.";
+            mail.Body += "\nMã đơn hàng: " + IdBill.ToString();
             foreach (var item in list)
             {
-                mail.Body += "\n\nProduct: " + context.Products.Where(p => p.id.Equals(item.id)).Select(p => p.name).FirstOrDefault();
-                mail.Body += "\nAmount: " + item.Amount.ToString();
-                mail.Body += "\nPrice: " + String.Format(CultureInfo.CurrentCulture, "{0:C0}", ((long)item.Amount * (long)context.Products.Where(p => p.id.Equals(item.id)).Select(p => p.price).FirstOrDefault())).ToString();
+                mail.Body += "\n\nSản phẩm: " + context.Products.Where(p => p.id.Equals(item.id)).Select(p => p.name).FirstOrDefault();
+                mail.Body += "\nSố lượng: " + item.Amount.ToString();
+                mail.Body += "\nGiá: " + String.Format(CultureInfo.CurrentCulture, "{0:C0}", ((long)item.Amount * (long)context.Products.Where(p => p.id.Equals(item.id)).Select(p => p.price).FirstOrDefault())).ToString();
             }
-            mail.Body += "\n\nTotal: " + String.Format(CultureInfo.CurrentCulture, "{0:C0}", context.Bills.Where(p => p.idBill.Equals(IdBill)).Select(p => p.Total).FirstOrDefault()).ToString();
+            mail.Body += "\n\nTổng đơn hàng: " + String.Format(CultureInfo.CurrentCulture, "{0:C0}", context.Bills.Where(p => p.idBill.Equals(IdBill)).Select(p => p.Total).FirstOrDefault()).ToString();
 
             smtpClient.Port = 587;
             smtpClient.Credentials = new System.Net.NetworkCredential("congdo2603@gmail.com", "zupiavgwdamnpntj");
@@ -458,7 +459,7 @@ namespace ProjectCCS.Controllers
             SendMail(list, b.idBill);
 
 
-            return RedirectToAction("HistoryCart");
+            return RedirectToAction("PaymentTM");
         }
         public ActionResult BillManager()
         {
@@ -559,7 +560,6 @@ namespace ProjectCCS.Controllers
                 context.ShoppingCarts.Remove(item);
                 context.SaveChanges();
             }
-            SendMail(list, bill.idBill);
 
             string amount = bill.Total.ToString();
             string orderid = DateTime.Now.Ticks.ToString();
@@ -601,6 +601,7 @@ namespace ProjectCCS.Controllers
 
             string responseFromMomo = PaymentRequest.sendPaymentRequest(endpoint, message.ToString());
             JObject jmessage = JObject.Parse(responseFromMomo);
+            SendMail(list, bill.idBill);
 
             return Redirect(jmessage.GetValue("payUrl").ToString());
         }
@@ -909,6 +910,27 @@ namespace ProjectCCS.Controllers
         public ActionResult ImportExcel()
         {
             return View();
+        }
+
+        public ActionResult PaymentTM()
+        {
+            return View();
+        }
+
+        public ActionResult FormSubmit()
+        {
+            //Validate Google recaptcha below
+
+            var response = Request["g-recaptcha-response"];
+            string secretKey = "6LdJdVwjAAAAAERrtz5FKJYPiRXkt8Db4PRrHVsq";
+            var client = new WebClient();
+
+            ViewData["Message"] = "Google reCaptcha validation success";
+
+
+            //Here I am returning to Index view:
+
+            return View("Index");
         }
     }
 }
