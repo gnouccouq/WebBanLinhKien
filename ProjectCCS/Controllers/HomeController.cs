@@ -956,5 +956,51 @@ namespace ProjectCCS.Controllers
 
             return View("Index");
         }
+
+        /*public ActionResult DiscountCoupon()
+        {
+            int discount;
+            int maxdiscount;
+            Int64 finalprice;
+            Int64 discountprice;
+
+            //String mycon = "Data Source=HP-PC\\SQLEXPRESS;Initial Catalog=jewelleryshop;Integrated Security=True";
+
+            String myquery = "Select * from CouponsDetails where couponcode='" + TextBox1.Text + "'";
+            SqlConnection con = new SqlConnection(ContextDB);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = myquery;
+            cmd.Connection = con;
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                Label3.Text = "Coupon Code " + TextBox1.Text + " Applied Successfully";
+
+                discount = Convert.ToInt16(ds.Tables[0].Rows[0]["discount"].ToString());
+                maxdiscount = Convert.ToInt16(ds.Tables[0].Rows[0]["maxdiscount"].ToString());
+                discountprice = (grandtotal * discount) / 100;
+                if (discountprice > maxdiscount)
+                {
+                    discountprice = maxdiscount;
+                }
+                Label4.Text = discountprice.ToString() + " ( " + discount + "% ) Maximum Upto Rs." + maxdiscount;
+                finalprice = grandtotal - discountprice;
+                Label5.Text = "Rs." + grandtotal.ToString();
+                Label6.Text = "Rs." + finalprice.ToString();
+            }
+            else
+            {
+                Label3.Text = "Invalid Coupon Code Applied : Not Exist";
+                Label5.Text = "";
+                Label4.Text = "";
+                Label6.Text = "";
+
+            }
+            con.Close();
+
+        }*/
     }
 }

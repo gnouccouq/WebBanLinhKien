@@ -212,6 +212,9 @@
     <Content Include="app\img\backgroundwhile.jpg" />
     <Content Include="app\img\banner.jpg" />
     <Content Include="app\img\banner4.png" />
+    <Content Include="app\img\banner5.png" />
+    <Content Include="app\img\banner6.png" />
+    <Content Include="app\img\banner7.png" />
     <Content Include="app\img\crossword.png" />
     <Content Include="app\img\lanmart.jpg" />
     <Content Include="app\img\LogoCCM.png" />

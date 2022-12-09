@@ -45,7 +45,11 @@
         <!-- 30% -->
         <h2 class="main_title">Thông tin thanh toán</h2>
         <div class="list__checkout">
-            <h3>Địa chỉ thanh toán:</h3>
+            <h3>Tên người nhận:</h3>
+            <p>@ViewBag.User.Name</p>
+            <h3>Số điện thoại:</h3>
+            <p>@ViewBag.User.Phone</p>
+            <h3>Địa chỉ nhận hàng:</h3>
             <p>@ViewBag.User.Address</p>
             @foreach (var item in list)
             {
@@ -57,12 +61,16 @@
             }
         </div>
         <div class="footer__checkout">
+
             <h2>@String.Format(CultureInfo.CurrentCulture, "{0:C0}", total)</h2>
             <a href="@Url.Action("Payment","Home")" class="thanhToanMomo">Thanh toán bằng ví MoMo</a>
             <h2></h2>
             <a href="@Url.Action("Checkout","Home")" class="thanhToan">Thanh toán bằng tiền mặt</a>
         </div>
-        
 
+
+        @Html.Label("Voucher", new { @class = "asd" })
+        @Html.TextBox("Mã giảm giá", "", new { placeholder = "Nhập mã giảm giá",@class = "invalid" })
+        <input class="button" type="submit" value="Áp dụng mã">
     </div>
 </section>
