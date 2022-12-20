@@ -230,6 +230,30 @@ namespace ProjectCCS.Controllers
             ViewBag.categories = context.Categories.ToList();
             return View(list);
         }
+        public ActionResult SortThaptoicao()
+        {
+            ContextDB context = new ContextDB();
+            ViewBag.categories = context.Categories.ToList();
+            return View("ListProduct", context.Products.OrderBy(p => p.price).ToList());
+        }
+        public ActionResult SortCaotoithap()
+        {
+            ContextDB context = new ContextDB();
+            ViewBag.categories = context.Categories.ToList();
+            return View("ListProduct", context.Products.OrderByDescending(p => p.price).ToList());
+        }
+        public ActionResult SortAdenZ()
+        {
+            ContextDB context = new ContextDB();
+            ViewBag.categories = context.Categories.ToList();
+            return View("ListProduct", context.Products.OrderBy(p => p.name).ToList());
+        }
+        public ActionResult SortZdenA()
+        {
+            ContextDB context = new ContextDB();
+            ViewBag.categories = context.Categories.ToList();
+            return View("ListProduct", context.Products.OrderByDescending(p => p.name).ToList());
+        }
         public ActionResult HistoryCart()
         {
             var user = getUser();
@@ -1002,5 +1026,42 @@ namespace ProjectCCS.Controllers
             con.Close();
 
         }*/
+
+        public ActionResult GoogleChartColumn()
+        {
+            return View();
+        }
+        public JsonResult GetSalesData()
+        {
+            using (ContextDB dc = new ContextDB())
+            {
+                var v = (from a in dc.Bills
+                         group a by a.idBill into g
+                         select new
+                         {
+                             idBill = g.Key,
+
+                             TOTAL = g.Sum(a => a.Total)
+                         });
+                if (v != null)
+                {
+                    var chartData = new object[v.Count() + 1];
+                    chartData[0] = new object[]{
+                "idBill",
+                "TOTAL",
+            };
+                    int j = 0;
+                    foreach (var i in v)
+                    {
+                        j++;
+                        chartData[j] = new object[] { i.idBill, i.TOTAL };
+
+                    }
+                    return new JsonResult { Data = chartData, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+                }
+
+            }
+            return new JsonResult { Data = null, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
     }
 }

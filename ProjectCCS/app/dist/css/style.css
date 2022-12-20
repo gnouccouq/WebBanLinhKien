@@ -98,6 +98,21 @@ body {
     transition: all 0.4s;
 }
 
+.button2 {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-size: 1.5rem;
+    padding: 0.5rem 0.5rem;
+    outline: none;
+    font-weight: 600;
+    border: 3px solid #5a88ca;
+    border-radius: 40px;
+    color: #5a88ca;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
 .button:hover {
   background: -webkit-gradient(linear, left top, right top, from(#5a88ca), to(#313eb1));
   background: linear-gradient(to right, #5a88ca, #313eb1);

@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "GoogleChartColumn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<section class="admin container flex">
+
+    @Html.Partial("~/Views/Shared/_NavigationBar.cshtml")
+
+    <div class="content" style="max-width:1500px;margin-left:200px;max-height:1000px;height:500px">
+        <div id="chart_div">
+        </div>
+        <div style="text-align:center">
+            <a id="export" href="#" class="button" style="display:none;font-size:20px;margin-top:50px;" download="FileName">Xuất ra ảnh</a>
+        </div>
+    </div>
+    @section scripts{
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script>
+            google.load('visualization', "1", { packages: ["corechart"] });
+            var chartData;
+            $.ajax({
+                url: '/Home/GetSalesData',
+                dataType: 'json',
+                type: 'GET',
+                success: function (d) {
+                    chartData = d;
+                },
+                error: function () {
+                    alert('Error! Please try again.');
+                }
+            }).done(function () {
+                drawChart();
+            });
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable(chartData);
+                var options = { title: "Thống Kê Đơn Đặt Hàng", pointSize: 5, 'chartArea': { 'width': '60%', 'height': '80%', left: 120, top: 30 } };
+                var columnChart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+
+                google.visualization.events.addListener(columnChart, 'ready', function () {
+                    var exportData = columnChart.getImageURI();
+                    $('#export').attr({ 'href': exportData, 'download': 'Thống Kê Đơn Đặt Hàng' }).show();
+
+                });
+                columnChart.draw(data, options);
+            }
+        </script>
+    }
+</section>
+</html>

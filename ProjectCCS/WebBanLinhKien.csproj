@@ -320,6 +320,7 @@
     <Content Include="Views\Home\ImportExcel.cshtml" />
     <Content Include="Views\Home\PaymentTM.cshtml" />
     <Content Include="Views\Home\RegisterGG.cshtml" />
+    <Content Include="Views\Home\GoogleChartColumn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

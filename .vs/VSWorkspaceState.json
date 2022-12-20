@@ -1,15 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\ProjectCCS",
-    "\\ProjectCCS\\app",
-    "\\ProjectCCS\\app\\dist",
-    "\\ProjectCCS\\app\\dist\\css",
-    "\\ProjectCCS\\Controllers",
-    "\\ProjectCCS\\Views",
-    "\\ProjectCCS\\Views\\Home",
-    "\\ProjectCCS\\Views\\Shared"
+    ""
   ],
-  "SelectedNode": "\\ProjectCCS\\Web.config",
   "PreviewInSolutionExplorer": false
 }

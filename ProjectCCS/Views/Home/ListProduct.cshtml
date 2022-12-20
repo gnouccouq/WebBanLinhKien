@@ -22,9 +22,16 @@
         </ul>
     </div>
     <div class="right-side">
+        <form action="./manager-products.html" class="searchBox">
+            <a class="button2" href=@Url.Action("SortThaptoicao","Home" )<i class="fa fa-plus-circle"></i>Giá tiền từ thấp tới cao</a>
+            <a href=@Url.Action("SortCaotoithap","Home" )class="button2">Giá tiền từ cao tới thấp</a>
+            <a href=@Url.Action("SortAdenZ","Home")class="button2">Sắp xếp tên A/Z</a>
+            <a href=@Url.Action("SortZdenA","Home")class="button2">Sắp xếp tên Z/A</a>
+        </form>
+        
         <!-- Contains products 75% -->
         <div class="products__container">
-            @foreach (var product in (IEnumerable<ProjectCCS.Models.Product>) Model)
+            @foreach (var product in (IEnumerable<ProjectCCS.Models.Product>)Model)
             {
                 <div class="item-product">
                     <div class="item__content">
@@ -36,7 +43,7 @@
                     </div>
                     <div class="item-product__details">
                         <a href="@Url.Action("detailProduct","Home", new { id = product.id })" class="detail btn-detail-text">@product.name</a>
-                        <span>@String.Format(CultureInfo.CurrentCulture, "{0:C0}",product.price)</span>
+                        <span>@String.Format(CultureInfo.CurrentCulture, "{0:C0}", product.price)</span>
                     </div>
                 </div>
             }
