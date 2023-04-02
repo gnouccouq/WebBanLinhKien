@@ -1,6 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ProjectCCS",
+    "\\ProjectCCS\\app",
+    "\\ProjectCCS\\app\\dist",
+    "\\ProjectCCS\\app\\dist\\css",
+    "\\ProjectCCS\\app\\img",
+    "\\ProjectCCS\\app\\js",
+    "\\ProjectCCS\\Views",
+    "\\ProjectCCS\\Views\\Home",
+    "\\ProjectCCS\\Views\\Shared"
   ],
+  "SelectedNode": "\\ProjectCCS\\Views\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }
